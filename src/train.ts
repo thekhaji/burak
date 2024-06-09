@@ -7,16 +7,46 @@
 //       
 
 
-console.log("H-TASK");
+// console.log("H-TASK");
 
-function getPositive(arrNum:number[]){
-    let posNums:string = "";
-    arrNum.map((e)=>{
-        if(e>=0)
-            posNums+=e;
-    });
+// function getPositive(arrNum:number[]){
+//     let posNums:string = "";
+//     arrNum.map((e)=>{
+//         if(e>=0)
+//             posNums+=e;
+//     });
 
-    return posNums;
+//     return posNums;
+// }
+
+// console.log(getPositive([1, -4, 2]));
+
+console.log("H2-TASK");
+
+function getDigits(word:string){
+    let digits: String = "";
+    for(let i=0; i<word.length; i++){
+
+        switch(word[i]){
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                digits=digits+word[i];
+                break;
+        }
+                
+    }
+
+    return digits;
 }
 
-console.log(getPositive([1, -4, 2]));
+console.log(getDigits("m12i1t"));
+
+
