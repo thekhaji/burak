@@ -2,12 +2,15 @@ import express from "express";
 const router = express.Router();
 import memberController from "./controllers/member.contoroller";
 
-router.get('/', memberController.goHome);
+//React
 
 
-router.get('/login', memberController.getLogin);
+// router.get('/', memberController.goHome);
 
 
-router.get('/signup', memberController.getSignup);
+// router.get('/login', memberController.getLogin);
+
+
+// router.get('/signup', memberController.getSignup);
 
 export default router;
