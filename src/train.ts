@@ -4,9 +4,14 @@
         -Naming standards
             CamelCase: function, method, variable
             Pascal: class
-            Kebab Case: older
+            Kebab Case: folder
             SNAKE: css
         -Error handlings
         
+    API -> Application Programming Interface
+    Tradition API
+    REST API
+    GraphQL API
+    ...
 
  */
