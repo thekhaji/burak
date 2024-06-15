@@ -31,4 +31,24 @@
 //     console.log("Worker THREAD with process ID:", process.pid);
 // }
 
-console.log("Andrew2024" === "Andrew2024");
+
+
+
+function marjorityElement(arr: number[]){
+    arr.sort();
+    let count = 1, max=0, element;
+    for (let i = 1; i < arr.length; ++i) {
+        if (arr[i] === arr[i - 1]) {
+            count++;
+        } else {
+            count = 1;
+        }
+        if (count > max) {
+            max = count;
+            element = arr[i];
+        }
+    }
+    return element;
+}
+
+console.log(marjorityElement([1,2,3,4,5,4,3,4]));
