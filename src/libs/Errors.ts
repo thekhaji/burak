@@ -13,7 +13,10 @@ export enum Message{
     SOMETHING_WENT_RONG = "Something Went Wrong!",
     NO_DATA_FOUND = "No data is found!",
     CREATE_FAILED = "Create is failed!",
-    UPDATE_FAILED = "Update is fauled!"
+    UPDATE_FAILED = "Update is fauled!",
+    USED_NICK_PHONE = "You are inserting already used nick or phone number!",
+    NO_MEMBER_NICK = "No memeber with that member nick!",
+    WRONG_PASSWORD = "Wrong password inserted!",
 }
 
 class Errors extends Error{

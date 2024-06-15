@@ -15,3 +15,20 @@
     ...
 
  */
+
+
+// import cluster from "cluster";
+
+// if(cluster.isMaster){
+//     console.log("Main THREAD with process ID:", process.pid);
+    
+//     const cpus = require("os").cpus();
+//     cpus.map(()=>{
+//         cluster.fork();
+//     });
+// }
+// else{
+//     console.log("Worker THREAD with process ID:", process.pid);
+// }
+
+console.log("Andrew2024" === "Andrew2024");
