@@ -60,3 +60,17 @@
     Traditional Frontend Development => BSSR(Adminka) => EJS
     Modern Frontend Development => SPA(User)  => REACT(json) 
 */
+
+
+function findLongestWord(word: string){
+    const wordArr: string[] = word.split(" ");
+    let long:string = "";
+    wordArr.map((ele)=>{
+        if (ele.length >= long.length)
+            long = ele;
+    });
+
+    return long;
+}
+
+console.log(findLongestWord("I come from Uzbekistan"));
