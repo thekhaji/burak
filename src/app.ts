@@ -21,8 +21,8 @@ app.set('view engine', 'ejs');
 
 
 // 4-ROUTES
-app.use("/", router);//MIddlewware Design Pattern
-app.use("/admin", routerAdmin);
+app.use("/", router);//Middlewware Design Pattern, SPA
+app.use("/admin", routerAdmin); //BSSR
 
 
 

@@ -5,12 +5,13 @@ import memberController from "./controllers/member.contoroller";
 //React
 
 
-// router.get('/', memberController.goHome);
 
 
-// router.get('/login', memberController.getLogin);
+router.post('/login', memberController.login);
 
 
-// router.get('/signup', memberController.getSignup);
+router.post('/signup', memberController.signup);
+
+
 
 export default router;
