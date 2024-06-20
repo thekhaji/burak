@@ -37,8 +37,8 @@ class MemberService{
         
         const member = await this.memberModel
             .findOne(
-                {memberNick: input.memberNick}, 
-                {memberNick: 1, memberPassword: 1}, 
+                {memberNick: input.memberNick}, //FILTER
+                {memberNick: 1, memberPassword: 1}, //PROJECTION 
             )
             .exec();
 
@@ -72,11 +72,14 @@ class MemberService{
             result.memberPassword = "";
             return result;
         } catch (error) {
+       
            throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED) ;
+           
         }
     }
     public async processLogin(input: LoginInput): Promise<Member>{
 
+        
         
         const member = await this.memberModel
             .findOne(
@@ -89,9 +92,9 @@ class MemberService{
         const isMatch = await bcrypt.compare(input.memberPassword, member.memberPassword);
     
         if(!isMatch) throw new Errors(HttpCode.UNATHORIZED, Message.WRONG_PASSWORD);
-
+        
         return await this.memberModel.findById(member._id).exec();
-
+        
     }
 }
 

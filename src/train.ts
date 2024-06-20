@@ -17,19 +17,19 @@
  */
 
 
-// import cluster from "cluster";
+import cluster from "cluster";
 
-// if(cluster.isMaster){
-//     console.log("Main THREAD with process ID:", process.pid);
+if(cluster.isMaster){
+    console.log("Main THREAD with process ID:", process.pid);
     
-//     const cpus = require("os").cpus();
-//     cpus.map(()=>{
-//         cluster.fork();
-//     });
-// }
-// else{
-//     console.log("Worker THREAD with process ID:", process.pid);
-// }
+    const cpus = require("os").cpus();
+    cpus.map(()=>{
+        cluster.fork();
+    }); 
+}
+else{
+    console.log("Worker THREAD with process ID:", process.pid);
+}
 
 
 
@@ -62,15 +62,15 @@
 */
 
 
-function findLongestWord(word: string){
-    const wordArr: string[] = word.split(" ");
-    let long:string = "";
-    wordArr.map((ele)=>{
-        if (ele.length >= long.length)
-            long = ele;
-    });
+// function findLongestWord(word: string){
+//     const wordArr: string[] = word.split(" ");
+//     let long:string = "";
+//     wordArr.map((ele)=>{
+//         if (ele.length >= long.length)
+//             long = ele;
+//     });
 
-    return long;
-}
+//     return long;
+// }
 
-console.log(findLongestWord("I come from Uzbekistan"));
+// console.log(findLongestWord("I come from Uzbekistan"));
