@@ -3,7 +3,7 @@ import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service"
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import { Message } from "../libs/Errors";
+import Errors, { Message } from "../libs/Errors";
 
 
 const restaurantController: T= {};
@@ -18,7 +18,7 @@ restaurantController.goHome = (req: Request, res: Response)=>{
     }
     catch(err){
         console.log("Error,go Home:", err);
-        
+        res.redirect("/admin");
     }
 };
 
@@ -29,7 +29,7 @@ restaurantController.getSignup = (req: Request, res: Response)=>{
     }
     catch(err){
         console.log("Error, getSigup:", err);
-        
+        res.redirect("/admin");
     }
 };
 
@@ -40,7 +40,7 @@ restaurantController.getLogin = (req: Request, res: Response)=>{
     }
     catch(err){
         console.log("Error,getLogin:", err);
-        
+        res.redirect("/admin");
     }
 };
 
@@ -62,7 +62,8 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response)=>{
     }
     catch(err){
         console.log("Error,processSignup:", err);
-        res.send(err); 
+        const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_RONG;
+        res.send((`<script>alert("${message}"); window.location.replace('admin/signup')</script>`));
     }
 };
 
@@ -83,6 +84,21 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response)=>{
     }
     catch(err){
         console.log("Error,processLogin:", err);
+        const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_RONG;
+        res.send((`<script>alert("${message}"); window.location.replace('admin/login')</script>`));
+    }
+};
+
+restaurantController.logout = async (req: AdminRequest, res: Response)=>{
+    try{
+        console.log("logout");
+        req.session.destroy(function(){
+            res.redirect("/admin");
+        });
+    }
+    catch(err){
+        console.log("Error,processLogin:", err);
+        res.send(err);
     }
 };
 
