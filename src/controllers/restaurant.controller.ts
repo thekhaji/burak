@@ -97,7 +97,7 @@ restaurantController.logout = async (req: AdminRequest, res: Response)=>{
         });
     }
     catch(err){
-        console.log("Error,processLogin:", err);
+        console.log("Error,processLogout:", err);
         res.send(err);
     }
 };
