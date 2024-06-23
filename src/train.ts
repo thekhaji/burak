@@ -34,27 +34,6 @@
 
 
 
-// function marjorityElement(arr: number[]){
-//     arr.sort();
-//     let count = 1, max=0, element;
-//     for (let i = 1; i < arr.length; ++i) {
-//         if (arr[i] === arr[i - 1]) {
-//             count++;
-//         } else {
-//             count = 1;
-//         }
-//         if (count > max) {
-//             max = count;
-//             element = arr[i];
-//         }
-//     }
-//     return element;
-// }
-
-// console.log(marjorityElement([1,2,3,4,5,4,3,4]));
-
-
-
 
 /* 
     Traditional Frontend Development => BSSR(Adminka) => EJS
@@ -62,34 +41,19 @@
 */
 
 
-// function findLongestWord(word: string){
-//     const wordArr: string[] = word.split(" ");
-//     let long:string = "";
-//     wordArr.map((ele)=>{
-//         if (ele.length >= long.length)
-//             long = ele;
-//     });
-
-//     return long;
-// }
-
-// console.log(findLongestWord("I come from Uzbekistan"));
-
-
 /*
     cookies joins each requests
  */
 
 
-function countVowels(word: String){
-    const vowels = "aeiouAEIOU";
-    let count = 0;
-    for(let i=0; i<word.length; i++){
-        if(vowels.includes(word[i]))
-            count++;
-    }
-    return count;
 
-}
 
-console.log(countVowels("Xojiakbar"));
+// console.log(countVowels("Xojiakbar"));
+
+/* 
+    Validation:
+        Frontend validation
+        Pipe validation
+        Backend validation
+        Database validation
+*/
