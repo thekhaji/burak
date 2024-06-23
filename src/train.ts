@@ -43,12 +43,9 @@
 
 /*
     cookies joins each requests
+    cookies are self distructive
+    cookes are the most secure browser db 
  */
-
-
-
-
-// console.log(countVowels("Xojiakbar"));
 
 /* 
     Validation:
@@ -57,3 +54,19 @@
         Backend validation
         Database validation
 */
+
+/*
+    L-TASK
+ */
+
+function reverseSentence(word: String){
+    let newWord: string="";
+    let temp: string[] = word.split(' ');
+    temp.map((ele)=>{
+        newWord += ele.split('').reverse().join('')+' ';
+    });
+    return newWord;
+}
+
+
+console.log(reverseSentence("we like coding!"));
