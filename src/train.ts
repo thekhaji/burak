@@ -56,17 +56,20 @@
 */
 
 /*
-    L-TASK
+    M-TASK
  */
 
-function reverseSentence(word: String){
-    let newWord: string="";
-    let temp: string[] = word.split(' ');
-    temp.map((ele)=>{
-        newWord += ele.split('').reverse().join('')+' ';
+
+function getSquareNumbers(number: number[]){
+    let objArr: Object[] = [];
+    number.map((ele)=>{
+        objArr.push({
+            number: ele,
+            square: ele*ele,
+        })
     });
-    return newWord;
+
+    return objArr;
 }
 
-
-console.log(reverseSentence("we like coding!"));
+console.log(getSquareNumbers([1, 2, 3]));
