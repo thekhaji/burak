@@ -8,7 +8,7 @@ import { ProductInput } from "../libs/types/product";
 
 
 const productService = new ProductService();
-const productController: T = new ProductService;
+const productController: T = {};
 
 
 productController.getAllProducts = async (req: AdminRequest, res: Response)=>{
