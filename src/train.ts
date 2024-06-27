@@ -56,20 +56,11 @@
 */
 
 /*
-    M-TASK
+    N-TASK
  */
 
-
-function getSquareNumbers(number: number[]){
-    let objArr: Object[] = [];
-    number.map((ele)=>{
-        objArr.push({
-            number: ele,
-            square: ele*ele,
-        })
-    });
-
-    return objArr;
+function palindromCheck(word:string){
+    return word === word.split("").reverse().join("") ? true : false;
 }
 
-console.log(getSquareNumbers([1, 2, 3]));
+console.log(palindromCheck("son"));
