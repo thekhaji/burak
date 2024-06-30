@@ -14,7 +14,7 @@ $(function(){
             }
             else{
                 if(uploadFile){
-                    $("upload-img-frame")
+                    $(".upload-img-frame")
                     .attr("src", URL.createObjectURL(uploadFile))
                     .addClass("success");
                 }
