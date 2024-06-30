@@ -62,11 +62,20 @@
 */
 
 /*
-    N-TASK
+    O-TASK
  */
 
-function palindromCheck(word:string){
-    return word === word.split("").reverse().join("") ? true : false;
+function calculateSumOfNumbers(arr: any[]){
+
+    let count = 0;
+    
+    arr.map((ele)=>{
+        if(typeof(ele) === "number")
+            count+=ele;
+    });
+
+    return count;
+
 }
 
-console.log(palindromCheck("son"));
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
