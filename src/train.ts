@@ -31,6 +31,12 @@
 //     console.log("Worker THREAD with process ID:", process.pid);
 // }
 
+/* 
+    Traditional API
+    Rest API
+    GraphQL APi
+    ...
+*/
 
 
 
