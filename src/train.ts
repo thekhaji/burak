@@ -62,20 +62,12 @@
 */
 
 /*
-    O-TASK
+    P-TASK
  */
 
-function calculateSumOfNumbers(arr: any[]){
-
-    let count = 0;
-    
-    arr.map((ele)=>{
-        if(typeof(ele) === "number")
-            count+=ele;
-    });
-
-    return count;
-
+function objectToArray(obj: object){
+    return Object.entries(obj);
 }
 
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
+
+console.log(objectToArray({a: 10, b: 20}));

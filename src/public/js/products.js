@@ -24,15 +24,12 @@ $(function(){
     $(".new-product-status").on("change", async function(e){
         const id = e.target.id;
         const productStatus = $(`#${id}.new-product-status`).val();
-        console.log("id:",id);
-        console.log("productStatus:", productStatus);
 
         try{
             const response = await axios.post(`/admin/product/${id}`, {productStatus: productStatus}) ;
             console.log("response:", response);
             const result = response.data;
             if(result.data){
-                console.log("Product updated!");
                 $(".new-product-status").blur();
             }else  alert("Prodcut update failed!");
         }
@@ -49,14 +46,14 @@ $(function(){
 
 
 function validateForm(){
-    const productName = $(".product-name").val();
-    const productStatus = $(".product-status").val();
-    const productPrice = $(".product-price").val();
-    const productLeftCount = $(".product-left-count").val();
-    const productCollection = $(".product-collection").val();
+    const productName = $(".product-name").val(),
+    productStatus = $(".product-status").val(),
+    productPrice = $(".product-price").val(),
+    productLeftCount = $(".product-left-count").val(),
+    productCollection = $(".product-collection").val(),
     // const productSize = $(".product-size").val();
     // const productVolume = $(".product-volume").val();
-    const productDesc = $(".product-desc").val();
+    productDesc = $(".product-desc").val();
     
     if (
         productName === "" || 
@@ -76,9 +73,8 @@ function validateForm(){
 }
 
 function previewFileHandler(input, order){
-    console.log("input:", input);
+
     const imgClassName = input.className ;
-    console.log("imgClassName:", imgClassName); 
 
     const file = $(`.${imgClassName}`).get(0).files[0];
     const fileType = file["type"];
