@@ -4,7 +4,7 @@ import { Member } from "../libs/types/member";
 import Errors from "../libs/Errors";
 import { HttpCode } from "../libs/Errors";
 import { Message } from "../libs/Errors";
-import { MemberType } from "../libs/enums/member.enum";
+import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
@@ -38,13 +38,18 @@ class MemberService{
         
         const member = await this.memberModel
             .findOne(
-                {memberNick: input.memberNick}, //FILTER
-                {memberNick: 1, memberPassword: 1}, //PROJECTION 
+                {
+                    memberNick: input.memberNick,
+                    memberStatus: {$ne: MemberStatus.DELETE}
+                }, //FILTER
+                {memberNick: 1, memberPassword: 1, memberStatus: 1}, //PROJECTION 
             )
             .exec();
 
         if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
-        
+        else if(member.memberStatus === MemberStatus.BLOCK){
+            throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
+        }
         const isMatch = await bcrypt.compare(input.memberPassword, member.memberPassword);
     
         if(!isMatch) throw new Errors(HttpCode.UNATHORIZED, Message.WRONG_PASSWORD);
