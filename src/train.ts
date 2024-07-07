@@ -65,9 +65,13 @@
     P-TASK
  */
 
-function objectToArray(obj: object){
-    return Object.entries(obj);
+function hasProperty(obj: object, key:string){
+    if (key in obj)
+        return true;
+    else
+        return false
 }
 
 
-console.log(objectToArray({a: 10, b: 20}));
+console.log(hasProperty({name: "BMW", model: "M3"}, "model"));
+

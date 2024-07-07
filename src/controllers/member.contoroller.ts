@@ -7,7 +7,7 @@ import Errors from "../libs/Errors";
 
 const memberService = new MemberService();
 
-const memberController: T= {};
+const memberController: T = {};
 
 //For React
 
