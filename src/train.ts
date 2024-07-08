@@ -62,16 +62,21 @@
 */
 
 /*
-    P-TASK
+    R-TASK
  */
 
-function hasProperty(obj: object, key:string){
-    if (key in obj)
-        return true;
-    else
-        return false
-}
 
 
-console.log(hasProperty({name: "BMW", model: "M3"}, "model"));
+function calculate(sentence: string){
+    if(sentence[1] === '+')
+        return Number(sentence[0]) + Number(sentence[2]);
+    else  if(sentence[1] === '-')
+        return Number(sentence[0]) - Number(sentence[2]);
+    else  if(sentence[1] === '*')
+        return Number(sentence[0]) * Number(sentence[2]);
+    else  if(sentence[1] === '/')
+        return Number(sentence[0]) / Number(sentence[2]);
+}  
 
+
+console.log(calculate("5+2"));
