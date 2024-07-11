@@ -62,21 +62,25 @@
 */
 
 /*
-    R-TASK
+    S-TASK
  */
 
 
 
-function calculate(sentence: string){
-    if(sentence[1] === '+')
-        return Number(sentence[0]) + Number(sentence[2]);
-    else  if(sentence[1] === '-')
-        return Number(sentence[0]) - Number(sentence[2]);
-    else  if(sentence[1] === '*')
-        return Number(sentence[0]) * Number(sentence[2]);
-    else  if(sentence[1] === '/')
-        return Number(sentence[0]) / Number(sentence[2]);
+function missingNumber(arr: number[]){
+    arr = arr.sort();
+    const n = arr.length;
+    const sumOfFirstN = arr.reduce((a,b)=>a+b,0);
+
+    let sumOfArray = 0;
+    for (let i = 0; i < n - 1; i++) {
+        sumOfArray = sumOfArray + arr[i];
+    }
+
+    let missingNumber = sumOfFirstN - sumOfArray;
+
+    return missingNumber;
 }  
 
 
-console.log(calculate("5+2"));
+console.log(missingNumber([3, 0, 1]));
