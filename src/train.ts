@@ -62,25 +62,12 @@
 */
 
 /*
-    S-TASK
+    T-TASK
  */
-
-
-
-function missingNumber(arr: number[]){
+function mergeSortedArrays(arr1:number[], arr2:number[]){
+    let arr = arr1.concat(arr2);
     arr = arr.sort();
-    const n = arr.length;
-    const sumOfFirstN = arr.reduce((a,b)=>a+b,0);
+    return(arr) ;
+}
 
-    let sumOfArray = 0;
-    for (let i = 0; i < n - 1; i++) {
-        sumOfArray = sumOfArray + arr[i];
-    }
-
-    let missingNumber = sumOfFirstN - sumOfArray;
-
-    return missingNumber;
-}  
-
-
-console.log(missingNumber([3, 0, 1]));
+console.log(mergeSortedArrays([0,3,4,31], [4,6,30]));
