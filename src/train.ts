@@ -62,12 +62,15 @@
 */
 
 /*
-    T-TASK
+    U-TASK
  */
-function mergeSortedArrays(arr1:number[], arr2:number[]){
-    let arr = arr1.concat(arr2);
-    arr = arr.sort();
-    return(arr) ;
+function sumOdds(num: number){
+    let sum = 0;
+    for(let i=0; i<num; i++){
+        if(i%2!==0)
+            sum+=1
+    }
+    return sum;
 }
 
-console.log(mergeSortedArrays([0,3,4,31], [4,6,30]));
+console.log(sumOdds(11));
