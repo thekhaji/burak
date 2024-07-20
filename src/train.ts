@@ -62,15 +62,20 @@
 */
 
 /*
-    U-TASK
+    W-TASK
  */
-function sumOdds(num: number){
-    let sum = 0;
-    for(let i=0; i<num; i++){
-        if(i%2!==0)
-            sum+=1
-    }
-    return sum;
+function chunArray(numArr: number[], slice: number){
+    let newArr=[];
+    let tempArr: number[] = [];
+    for(let i=0; i<numArr.length; i++){
+        tempArr.push(numArr[i]);
+        if (tempArr.length === 3 || (numArr.length-1 === i)){
+            newArr.push(tempArr);
+            tempArr = [];
+        }
+    };
+
+    return newArr;
 }
 
-console.log(sumOdds(11));
+console.log(chunArray([1,2,3,4,5,6,7,8,9,10,11,23], 3));
