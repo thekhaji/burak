@@ -62,20 +62,25 @@
 */
 
 /*
-    W-TASK
+    X-TASK
  */
-function chunArray(numArr: number[], slice: number){
-    let newArr=[];
-    let tempArr: number[] = [];
-    for(let i=0; i<numArr.length; i++){
-        tempArr.push(numArr[i]);
-        if (tempArr.length === 3 || (numArr.length-1 === i)){
-            newArr.push(tempArr);
-            tempArr = [];
+function countOccurrences(obj: any, param: string){
+    let count = 0;
+    function recursiveCount(obj: any) {
+        if (typeof obj === 'object' && obj !== null) {
+          for (const k in obj) {
+            if (k === param) {
+              count++;
+            }
+            if (typeof obj[k] === 'object' && obj[k] !== null) {
+              recursiveCount(obj[k]);
+            }
+          }
         }
-    };
+      }
+      recursiveCount(obj);
 
-    return newArr;
+    return count;
 }
 
-console.log(chunArray([1,2,3,4,5,6,7,8,9,10,11,23], 3));
+console.log(countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model'));
