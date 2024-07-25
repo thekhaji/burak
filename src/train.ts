@@ -64,23 +64,15 @@
 /*
     X-TASK
  */
-function countOccurrences(obj: any, param: string){
-    let count = 0;
-    function recursiveCount(obj: any) {
-        if (typeof obj === 'object' && obj !== null) {
-          for (const k in obj) {
-            if (k === param) {
-              count++;
-            }
-            if (typeof obj[k] === 'object' && obj[k] !== null) {
-              recursiveCount(obj[k]);
-            }
-          }
-        }
-      }
-      recursiveCount(obj);
+function findIntersection(arr1: number[], arr2: number[]){
+  let newArr: number[] = [];
 
-    return count;
+  arr1.map((ele)=>{
+    if (arr2.includes(ele))
+      newArr.push(ele);
+  });
+
+  return newArr;
 }
 
-console.log(countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model'));
+console.log(findIntersection([1,2,3], [3,2,0]));
