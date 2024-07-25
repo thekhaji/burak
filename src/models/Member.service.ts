@@ -52,7 +52,7 @@ class MemberService{
                 }, //FILTER
                 {memberNick: 1, memberPassword: 1, memberStatus: 1}, //PROJECTION 
             )
-            .exec();
+            .exec();  
 
         if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
         else if(member.memberStatus === MemberStatus.BLOCK){
