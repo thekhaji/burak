@@ -49,7 +49,7 @@ productController.getProduct = async(req: ExtendedRequest, res: Response) => {
         
         res.status(HttpCode.OK).json(result);
 
-    } catch (err) {
+    } catch (err) {                        
         console.log("Error,getProduct:", err);
         if (err instanceof Errors) res.status(err.code).json();
         else res.status(Errors.standard.code).json(Errors.standard);

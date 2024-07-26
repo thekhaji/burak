@@ -62,7 +62,7 @@
 */
 
 /*
-    X-TASK
+    Y-TASK
  */
 function findIntersection(arr1: number[], arr2: number[]){
   let newArr: number[] = [];

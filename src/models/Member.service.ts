@@ -37,7 +37,7 @@ class MemberService{
 
         } catch (error) {
             console.log("Error, model:singup ", error);
-            throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE) ;
+            throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE) ;             
         }
     }
 
@@ -86,7 +86,7 @@ class MemberService{
     }
 
     public async getTopUsers(): Promise<Member[]>{
-        const result = await this.memberModel.find({memberStatus: MemberStatus.ACTIVE, memberPoints: {$gte: 1}}).sort({memberPoints: -1}).limit(4).exec();
+        const result = await this.memberModel.find({memberStatus: MemberStatus.ACTIVE, memberPoints: {$gte: 1}}).sort({memberPoints: -1}).limit(4).exec(); //gte - greater than equal
         if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
         return result;
     
