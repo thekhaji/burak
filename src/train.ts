@@ -64,15 +64,16 @@
 /*
     Y-TASK
  */
-function findIntersection(arr1: number[], arr2: number[]){
-  let newArr: number[] = [];
+function sumEvens(arr: number[]){
+  let sum: number = 0;
 
-  arr1.map((ele)=>{
-    if (arr2.includes(ele))
-      newArr.push(ele);
+
+  arr.map((ele)=>{
+    if (ele%2===0)
+      sum+=ele;
   });
 
-  return newArr;
+  return sum;
 }
 
-console.log(findIntersection([1,2,3], [3,2,0]));
+console.log(sumEvens([1,2,3]));
