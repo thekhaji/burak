@@ -62,18 +62,10 @@
 */
 
 /*
-    Y-TASK
+    Z-TASK
  */
-function sumEvens(arr: number[]){
-  let sum: number = 0;
-
-
-  arr.map((ele)=>{
-    if (ele%2===0)
-      sum+=ele;
-  });
-
-  return sum;
+function randomBetween(min: number, max:number){
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-console.log(sumEvens([1,2,3]));
+console.log(randomBetween(30, 50));
