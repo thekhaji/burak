@@ -62,10 +62,11 @@
 */
 
 /*
-    ZC-TASK
+    ZD-TASK
  */
-function celsiusToFahrenheit(celsius: number){
-    return (celsius*9/5)+32;
+function changeNumberInArray(index: number, arr: number[], alter: number){
+    arr[index] = alter;
+    return arr;
 }
 
-console.log(celsiusToFahrenheit(0));
+console.log(changeNumberInArray(1, [1,3,7,2], 2));
