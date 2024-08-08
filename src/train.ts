@@ -2,7 +2,7 @@
     Project Standards:
         -Logging standards
         -Naming standards
-            CamelCase: function, method, variable
+            CamelCase: function, method, letiable
             Pascal: class
             Kebab Case: folder
             SNAKE: css
@@ -62,11 +62,34 @@
 */
 
 /*
-    ZD-TASK
+    ZE-TASK
  */
-function changeNumberInArray(index: number, arr: number[], alter: number){
-    arr[index] = alter;
-    return arr;
+function removeDuplicate(str: string){
+    let index = 0;
+    let arrStr = str.split("");
+    let newStr = [];
+    console.log("initial:",arrStr);
+    
+    for (let i = 0; i < arrStr.length; i++)
+    {
+        let j;
+        for (j = 0; j < i; j++) 
+        {
+            if (str[i] == str[j])
+            {
+                break;
+            }
+        }
+
+        if (j == i) 
+        {
+            newStr[index++] = str[i];
+            console.log("inner: ",newStr);
+            
+        }
+    }
+        
+        return newStr.join("");
 }
 
-console.log(changeNumberInArray(1, [1,3,7,2], 2));
+console.log(removeDuplicate('stringg'));
