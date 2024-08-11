@@ -64,32 +64,19 @@
 /*
     ZE-TASK
  */
-function removeDuplicate(str: string){
-    let index = 0;
-    let arrStr = str.split("");
-    let newStr = [];
+function capitalizeWords(text: string){
+    let arrStr = text.split(" ");
+    let newStr: string[] = [];
     console.log("initial:",arrStr);
     
-    for (let i = 0; i < arrStr.length; i++)
-    {
-        let j;
-        for (j = 0; j < i; j++) 
-        {
-            if (str[i] == str[j])
-            {
-                break;
-            }
-        }
-
-        if (j == i) 
-        {
-            newStr[index++] = str[i];
-            console.log("inner: ",newStr);
-            
-        }
-    }
+    arrStr.map((ele)=>{
+        if(ele.length>2)
+            newStr.push(ele.charAt(0).toUpperCase() + ele.slice(1) );
+        else
+            newStr.push(ele);
+    })
         
-        return newStr.join("");
+    return newStr.join(" ");
 }
 
-console.log(removeDuplicate('stringg'));
+console.log(capitalizeWords('name should be a string'));

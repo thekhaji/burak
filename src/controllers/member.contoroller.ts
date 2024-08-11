@@ -37,10 +37,11 @@ memberController.signup = async (req: Request, res: Response)=>{
         res.cookie("accessToken", token, {maxAge: AUTH_TIMER * 3600 * 1000, httpOnly: false});
 
         res.status(HttpCode.CREATED).json({member: result, accessToken: token});
+
     }
     catch(err){
         console.log("Error, signup:", err);
-        if (err instanceof Errors) res.status(err.code).json();
+        if (err instanceof Errors) res.status(err.code).json(err);
         else res.status(Errors.standard.code).json(Errors.standard);
     }
 };
