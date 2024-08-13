@@ -64,19 +64,9 @@
 /*
     ZE-TASK
  */
-function capitalizeWords(text: string){
+function convertToSnakeCase(text: string){
     let arrStr = text.split(" ");
-    let newStr: string[] = [];
-    console.log("initial:",arrStr);
-    
-    arrStr.map((ele)=>{
-        if(ele.length>2)
-            newStr.push(ele.charAt(0).toUpperCase() + ele.slice(1) );
-        else
-            newStr.push(ele);
-    })
-        
-    return newStr.join(" ");
+    return arrStr.join("_");
 }
 
-console.log(capitalizeWords('name should be a string'));
+console.log(convertToSnakeCase('name should be a string'));

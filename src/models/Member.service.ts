@@ -30,7 +30,7 @@ class MemberService{
         const salt = await bcrypt.genSalt();
         input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
-        try {
+        try {   
             const result = await this.memberModel.create(input);
             result.memberPassword = "";
             return result.toJSON();
