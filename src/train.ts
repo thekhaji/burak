@@ -62,11 +62,18 @@
 */
 
 /*
-    ZE-TASK
+    ZH-TASK
  */
-function convertToSnakeCase(text: string){
-    let arrStr = text.split(" ");
-    return arrStr.join("_");
+function findDisappearedNumbers(arr: number[]){
+    let newArr: number[] = [];
+    let min = Math.min(...arr);
+    let max = Math.max(...arr);
+
+    for (let i = min; i<=max; i++){
+        if (!arr.includes(i))
+            newArr.push(i)
+    }
+    return newArr;
 }
 
-console.log(convertToSnakeCase('name should be a string'));
+console.log(findDisappearedNumbers([1, 3, 4, 7]));
