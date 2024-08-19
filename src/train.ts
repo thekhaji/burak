@@ -62,18 +62,15 @@
 */
 
 /*
-    ZH-TASK
+    ZI-TASK
  */
-function findDisappearedNumbers(arr: number[]){
-    let newArr: number[] = [];
-    let min = Math.min(...arr);
-    let max = Math.max(...arr);
+//ZI-TASK
 
-    for (let i = min; i<=max; i++){
-        if (!arr.includes(i))
-            newArr.push(i)
-    }
-    return newArr;
+function delayHelloWorld(text: string){
+    return text    
 }
 
-console.log(findDisappearedNumbers([1, 3, 4, 7]));
+setTimeout(()=>{
+    console.log(delayHelloWorld("Hello World!"));
+    
+}, 3000);
