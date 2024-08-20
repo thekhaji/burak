@@ -64,13 +64,22 @@
 /*
     ZI-TASK
  */
-//ZI-TASK
+//ZJ-TASK
 
-function delayHelloWorld(text: string){
-    return text    
+function reduceNestedArray(numbers: any[]){
+    let sum = 0;
+    for(let i=0; i<numbers.length; i++){
+        if(Array.isArray(numbers[i])){
+            sum += reduceNestedArray(numbers[i]);
+        }
+        else if(typeof numbers[i] === 'number')
+            sum+=numbers[i];
+    }
+
+    
+    return sum;
 }
 
-setTimeout(()=>{
-    console.log(delayHelloWorld("Hello World!"));
+console.log(reduceNestedArray([1, [1, 2, [4]]]));
+
     
-}, 3000);
