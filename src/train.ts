@@ -61,25 +61,32 @@
         Database validation
 */
 
-/*
-    ZI-TASK
- */
-//ZJ-TASK
+//ZK-TASK
 
-function reduceNestedArray(numbers: any[]){
-    let sum = 0;
-    for(let i=0; i<numbers.length; i++){
-        if(Array.isArray(numbers[i])){
-            sum += reduceNestedArray(numbers[i]);
+function printNumbers() {
+    let startTime = Date.now();
+    let intervalId: any;
+
+    function print() {
+        const currentTime = Date.now();
+        const elapsedTime = (currentTime - startTime) / 1000;
+        
+        if (elapsedTime > 5) {
+            clearInterval(intervalId); 
+            return;
         }
-        else if(typeof numbers[i] === 'number')
-            sum+=numbers[i];
+
+
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
     }
 
-    
-    return sum;
+
+    intervalId = setInterval(print, 1000);
 }
 
-console.log(reduceNestedArray([1, [1, 2, [4]]]));
+printNumbers();
+
 
     
