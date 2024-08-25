@@ -61,32 +61,18 @@
         Database validation
 */
 
-//ZK-TASK
+//ZL-TASK
 
-function printNumbers() {
-    let startTime = Date.now();
-    let intervalId: any;
-
-    function print() {
-        const currentTime = Date.now();
-        const elapsedTime = (currentTime - startTime) / 1000;
-        
-        if (elapsedTime > 5) {
-            clearInterval(intervalId); 
-            return;
-        }
-
-
-        for (let i = 1; i <= 5; i++) {
-            console.log(i);
-        }
+function stringToKebab(str: string) {
+    return str
+      .toLowerCase()         
+      .trim()                
+      .replace(/\s+/g, '-')   
     }
+  
 
+  console.log(stringToKebab("I love Kebab"));
 
-    intervalId = setInterval(print, 1000);
-}
-
-printNumbers();
-
+  
 
     
