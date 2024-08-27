@@ -61,17 +61,18 @@
         Database validation
 */
 
-//ZL-TASK
+//ZM-TASK
 
-function stringToKebab(str: string) {
-    return str
-      .toLowerCase()         
-      .trim()                
-      .replace(/\s+/g, '-')   
+function reverseInteger(num: number) {
+    let newNum = 0;
+
+    while (num!=0){
+        newNum = (newNum*10) + (num%10);
+        num = Math.floor(num/10); 
     }
-  
-
-  console.log(stringToKebab("I love Kebab"));
+    return newNum;
+}
+  console.log(reverseInteger(123456789));
 
   
 
