@@ -61,18 +61,16 @@
         Database validation
 */
 
-//ZM-TASK
+//ZN-TASK
 
-function reverseInteger(num: number) {
-    let newNum = 0;
-
-    while (num!=0){
-        newNum = (newNum*10) + (num%10);
-        num = Math.floor(num/10); 
+function rotateArray(arr: any, ind: number) {
+    for(let i = 1; i < ind; i++){
+        let temp = arr.pop();
+        arr.unshift(temp);   
     }
-    return newNum;
+    return arr;
 }
-  console.log(reverseInteger(123456789));
+  console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
   
 
