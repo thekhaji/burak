@@ -61,16 +61,26 @@
         Database validation
 */
 
-//ZN-TASK
+//ZO-TASK
 
-function rotateArray(arr: any, ind: number) {
-    for(let i = 1; i < ind; i++){
-        let temp = arr.pop();
-        arr.unshift(temp);   
+function areParenthesesBalanced(text: string) {
+    let balance = 0; 
+
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === '(') {
+            balance++;
+        } else if (text[i] === ')') {
+            balance--;
+        }
     }
-    return arr;
+
+    return balance === 0;
 }
-  console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
+// Example usage:
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+
+
 
   
 
