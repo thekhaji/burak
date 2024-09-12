@@ -61,26 +61,19 @@
         Database validation
 */
 
-//ZQ-TASK
-
-function countNumberAndLetters(str: string) {
-    let result = { number: 0, letter: 0 };
-  
-    for (let i = 0; i < str.length; i++) {
-
-      if (str[i] >= '0' && str[i] <= '9') {
-        result.number++;
+//ZR-TASK
+function singleNumber(arr: number[]) {
+  for (let i = 0; i < arr.length; i++) {
+      if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+          return arr[i];
       }
-
-      else if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
-        result.letter++;
-      }
-    }
-  
-    return result;
   }
-  
-  console.log(countNumberAndLetters("string152%\\¥"));
+
+  return null;
+}
+
+console.log(singleNumber([4, 2, 1, 2, 1])); // 4
+
   
 
 
