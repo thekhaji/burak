@@ -61,18 +61,17 @@
         Database validation
 */
 
-//ZR-TASK
-function singleNumber(arr: number[]) {
-  for (let i = 0; i < arr.length; i++) {
-      if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
-          return arr[i];
-      }
-  }
-
-  return null;
+//ZS-TASK
+function firstUniqueCharIndex(str: string) {
+    for (let i = 0; i < str.length; i++) {
+        if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+            return i;
+        }
+    }
+    return -1;
 }
 
-console.log(singleNumber([4, 2, 1, 2, 1])); // 4
+console.log(firstUniqueCharIndex("stamp"));
 
   
 
