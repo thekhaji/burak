@@ -49,7 +49,7 @@
 
 /*
     cookies joins each requests
-    cookies are self distructive
+    cookies are self dinumsuctive
     cookes are the most secure browser db 
  */
 
@@ -61,17 +61,18 @@
         Database validation
 */
 
-//ZS-TASK
-function firstUniqueCharIndex(str: string) {
-    for (let i = 0; i < str.length; i++) {
-        if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
-            return i;
+//ZT-TASK
+function sumOfUnique(nums: number[]) {
+    let sum = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
+            sum+=nums[i];
         }
     }
-    return -1;
+    return sum;
 }
 
-console.log(firstUniqueCharIndex("stamp"));
+console.log(sumOfUnique([1,2,3,2]));
 
   
 
