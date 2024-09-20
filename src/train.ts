@@ -61,18 +61,19 @@
         Database validation
 */
 
-//ZT-TASK
-function sumOfUnique(nums: number[]) {
-    let sum = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
-            sum+=nums[i];
+//ZU-TASK
+function areArraysEqual(arr1: number[], arr2: number[]) {
+    let flag = true;
+    arr1.map((ele)=>{
+        
+        if(!arr2.includes(ele)){
+            flag = false;
         }
-    }
-    return sum;
+    })
+    return flag;
 }
 
-console.log(sumOfUnique([1,2,3,2]));
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 
   
 
